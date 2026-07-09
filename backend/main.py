@@ -32,16 +32,16 @@ def read_root():
 
 @app.get("/satellites")
 async def read_satellites() -> list[SatRec] | None:
-  satellites = await get_satellites()
-  if satellites == None:
+  data = await get_satellites()
+  if data == None:
     return None
-  result = [SatRec(**dict(row)) for row in satellites]
-  return result
+  satellites = [SatRec(**dict(satellite)) for satellite in data]
+  return satellites
 
 @app.get("/satellites/{object_id}")
 async def read_item(object_id: str) -> SatRec | None:
-  satellite = await get_satellite(object_id)
-  if satellite == None:
+  data = await get_satellite(object_id)
+  if data == None:
     return None
-  result = SatRec(**dict(satellite))
-  return result
+  satellite = SatRec(**dict(data))
+  return satellite
