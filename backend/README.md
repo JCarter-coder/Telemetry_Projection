@@ -6,6 +6,12 @@
 pip3 install "fastapi[standard]"
 ```
 
+## Running the Server
+
+```bash
+fastapi dev
+```
+
 ## Documentation
 
 There are two popular types of documentation used with FastAPI.
