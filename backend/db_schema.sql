@@ -1,5 +1,3 @@
-PRAGMA foreign_keys = ON;
-
 DROP TABLE IF EXISTS satellites;
 
 CREATE TABLE satellites (
